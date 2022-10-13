@@ -14,12 +14,13 @@ export default function getProducts(req, res) {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			for (var i = 0; i < data.values.length; i++) {
+			for (var i = 1; i < data.values.length; i++) {
 				array.push({
 					id: data.values[i][0],
 					name: data.values[i][2],
 					description: data.values[i][3],
 					price: data.values[i][4],
+					image: data.values[i][5],
 				});
 
 				category.push(data.values[i][1]);
